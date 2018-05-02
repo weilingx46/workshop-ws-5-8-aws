@@ -2,7 +2,7 @@
 
 ![](https://static1.squarespace.com/static/599bfc6803596ef973b3fade/t/5adde270575d1f40f9b86b12/1524490877466/Amazon+Web+Serives)
 
-Authors: Alexander Danilowicz,
+Authors: Katherine Bernardez, Alexander Danilowicz, Stephen Liao, Robert Crawford
 
 Brief motivation here as well as in presentation
 
