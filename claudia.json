@@ -1,0 +1,7 @@
+{
+  "lambda": {
+    "role": "workshop-ws-5-8-aws-executor",
+    "name": "workshop-ws-5-8-aws",
+    "region": "us-west-1"
+  }
+}

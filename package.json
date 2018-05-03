@@ -1,0 +1,23 @@
+{
+  "name": "workshop-ws-5-8-aws",
+  "version": "1.0.0",
+  "description": "![](https://static1.squarespace.com/static/599bfc6803596ef973b3fade/t/5adde270575d1f40f9b86b12/1524490877466/Amazon+Web+Serives)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dartmouth-cs52-18S/workshop-ws-5-8-aws.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dartmouth-cs52-18S/workshop-ws-5-8-aws/issues"
+  },
+  "homepage": "https://github.com/dartmouth-cs52-18S/workshop-ws-5-8-aws#readme",
+  "dependencies": {
+    "minimal-request-promise": "^1.5.0"
+  }
+}
