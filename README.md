@@ -125,8 +125,6 @@ aws lambda add-permission \
 
 `ruleArn` is the output from the `aws events...` command. `function-name` can be found by going to the aws console -> services -> lambda -> Functions.
 
-I don't know what the Id means. I feel like as it should be okay if everyone has their own lambda function with their own unique name on aws? Should test this to see if it works.
-
-If the above command is executed, then you should receive an update of hackernews stories every hour. If you want to test it immediately, run `claudia test-lambda` and you should receive an update. You're all done!
+Run `claudia test-lambda` and you should receive an update. You're all done!
 
 
