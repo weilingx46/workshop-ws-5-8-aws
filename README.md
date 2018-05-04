@@ -107,8 +107,9 @@ You should now see `claudia.json` in your directory. It should look like this:
   }
 }
 ```
+Run this code
 
-`aws events put-rule --name hackerNewsDigest --schedule-expression 'cron(0/59 * * * ? *)'` Sets this as an event to trigger every hour (potential extra credit could be for someone to make this trigger once a day rather than every hour). 
+`aws events put-rule --name hackerNewsDigest --schedule-expression 'cron(0/59 * * * ? *)'` Sets this as an event to trigger every hour
 
 Running the above command will output the `arn` of the task. Copy it. 
 
@@ -124,11 +125,6 @@ aws lambda add-permission \
 
 `ruleArn` is the output from the `aws events...` command. `function-name` can be found by going to the aws console -> services -> lambda -> Functions.
 
-Trigger the tasks officially with this command:
-
-```
-aws events put-targets --rule hackerNewsDigest --targets '[{ "Id": "1", "Arn": "your Lambda ARN" }]'
-```
 I don't know what the Id means. I feel like as it should be okay if everyone has their own lambda function with their own unique name on aws? Should test this to see if it works.
 
 If the above command is executed, then you should receive an update of hackernews stories every hour. If you want to test it immediately, run `claudia test-lambda` and you should receive an update. You're all done!
