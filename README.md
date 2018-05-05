@@ -47,7 +47,7 @@ Here's a resource for [github markdown](https://guides.github.com/features/maste
 
 
 ## SAMPLE CODE INSTRUCTIONS
-#When forking/cloning the repo, try to change the name of the directory. You need to do this because when claudia uploads to lambda function to aws, it uses the directory name as the function name and if everyone has the same direcotry name then there will be conflicting function names and no one will be able to deploy. Change the directory to `workshop-ws-5-8-aws-your_name`. 
+#When forking/cloning the repo, try to change the name of the directory. You need to do this because when claudia uploads to lambda function to aws, it uses the directory name as the function name and if everyone has the same direcotry name then there will be conflicting function names and no one will be able to deploy. Change the directory to `workshop-ws-5-8-aws-your_name`.
 
 # Download aws-cli
 `pip install awscli`
@@ -66,6 +66,8 @@ Claudia.js is a nice package that allows us to treat infrastructure as code. It 
 `npm install claudia -g`
 
 # Set up claudia.js
+https://claudiajs.com/tutorials/installing.html
+
 Configure your `~/.aws/credentials` file to look like this:
 
 ```
@@ -108,9 +110,9 @@ You should now see `claudia.json` in your directory. It should look like this:
 }
 ```
 
-`aws events put-rule --name hackerNewsDigest --schedule-expression 'cron(0/59 * * * ? *)'` Sets this as an event to trigger every hour (potential extra credit could be for someone to make this trigger once a day rather than every hour). 
+`aws events put-rule --name hackerNewsDigest --schedule-expression 'cron(0/59 * * * ? *)'` Sets this as an event to trigger every hour (potential extra credit could be for someone to make this trigger once a day rather than every hour).
 
-Running the above command will output the `arn` of the task. Copy it. 
+Running the above command will output the `arn` of the task. Copy it.
 
 ```
 aws lambda add-permission \
@@ -132,5 +134,3 @@ aws events put-targets --rule hackerNewsDigest --targets '[{ "Id": "1", "Arn": "
 I don't know what the Id means. I feel like as it should be okay if everyone has their own lambda function with their own unique name on aws? Should test this to see if it works.
 
 If the above command is executed, then you should receive an update of hackernews stories every hour. If you want to test it immediately, run `claudia test-lambda` and you should receive an update. You're all done!
-
-
