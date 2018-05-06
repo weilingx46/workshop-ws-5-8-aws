@@ -24,6 +24,47 @@ our account at the end of class).
 
 ## Step by Step
 
+# Download aws-cli
+`pip install awscli`
+
+# Configure AWS-CLI with your proper credentials
+- In the top right click on your account name and then on My Security Credentials. Expand Access
+keys tab and click on Create New Access Key. Hold on to the **access key** and **secret key**.
+Run
+`aws configure`
+On the command line, enter your access key and secret key as they come up.
+```
+AWS Access Key Id = INSERT-YOUR-ACCESS-KEY
+AWS Secret Key = INSERT-YOUR-SECRET-KEY
+Default Region name = us-east-2
+```
+Note that we are working in *us-east-2* as our region!!
+
+# Download claudia.js
+Claudia.js is a nice package that allows us to treat infrastructure as code. It lets us take any function we write and upload it as a lambda function. We could do this manually on AWS, by clicking around through a bunch of menus, but that wouldn't be very ~software engineer-y~ of us.
+
+`npm install claudia -g`
+
+# Set up claudia.js
+https://claudiajs.com/tutorials/installing.html
+
+Configure your `~/.aws/credentials` file to look like this:
+
+```
+[claudia]
+aws_secret_access_id = INSERT-YOUR-ACCESS-KEY
+aws_access_key_id = INSERT-YOUR-SECRET-KEY
+```
+
+And then, run set AWS_PROFILE environment variable to claudia with the following command in your top-level project dir:
+
+```
+export AWS_PROFILE=claudia
+```
+To make sure that we did that correctly, run `echo $AWS_PROFILE` and it should return the value `claudia`.
+
+Great, now we're ready to start.
+
 * Explanations of the what **and** the why behind each step. Try to include:
   * higher level concepts
   * best practices
@@ -56,44 +97,9 @@ Here's a resource for [github markdown](https://guides.github.com/features/maste
 
 ![](img\change-repo-name.PNG)
 
-# Download aws-cli
-`pip install awscli`
 
-# Configure AWS-CLI with your proper credentials
-- todo: instructions sign in to AWS console and get *access key* and *secret key*
-After downloading aws-cli, run `aws configure` on the command line and enter the following fields as they come up.
-```
-AWSAccessKeyId = INSERT-YOUR-ACCESS-KEY
-AWSSecretKey = INSERT-YOUR-SECRET-KEY
-Default Region name = us-east-2
-```
 
-Note that we are working in *us-east-2* as our region!!
 
-# Download claudia.js
-Claudia.js is a nice package that allows us to treat infrastructure as code. It lets us take any function we write and upload it as a lambda function. We could do this manually on AWS, by clicking around through a bunch of menus, but that wouldn't be very ~software engineer-y~ of us.
-
-`npm install claudia -g`
-
-# Set up claudia.js
-https://claudiajs.com/tutorials/installing.html
-
-Configure your `~/.aws/credentials` file to look like this:
-
-```
-[claudia]
-aws_secret_access_id = INSERT-YOUR-ACCESS-KEY
-aws_access_key_id = INSERT-YOUR-SECRET-KEY
-```
-
-And then, run set AWS_PROFILE environment variable to claudia with the following command in your top-level project dir:
-
-```
-export AWS_PROFILE=claudia
-```
-To make sure that we did that correctly, run `echo $AWS_PROFILE` and it should return the value `claudia`.
-
-Great, now we're ready to start.
 
 # Write the code
 Here is where the groups will copy the code. Just follow the article and we should be fine.
