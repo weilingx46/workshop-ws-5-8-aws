@@ -48,7 +48,7 @@ Claudia.js is a nice package that allows us to treat infrastructure as code. It 
 # Set up claudia.js
 https://claudiajs.com/tutorials/installing.html
 
-Configure your `~/.aws/credentials` file to look like this:
+Open up your `~/.aws/credentials` file (by running `atom ~/.aws/credentials` in terminal) and make it look like this:
 
 ```
 [claudia]
@@ -61,45 +61,9 @@ And then, run set AWS_PROFILE environment variable to claudia with the following
 ```
 export AWS_PROFILE=claudia
 ```
-To make sure that we did that correctly, run `echo $AWS_PROFILE` and it should return the value `claudia`.
-
-Great, now we're ready to start.
-
-* Explanations of the what **and** the why behind each step. Try to include:
-  * higher level concepts
-  * best practices
-
-Remember to explain any notation you are using.
-
-```javascript
-/* and use code blocks for any code! */
-```
-
-![screen shots are helpful](img/screenshot.png)
-
-:sunglasses: GitHub markdown files [support emoji notation](http://www.emoji-cheat-sheet.com/)
-
-Here's a resource for [github markdown](https://guides.github.com/features/mastering-markdown/).
-
-
-## Summary / What you Learned
-
-* [ ] can be checkboxes
-
-## Resources
-
-* cite any resources
-
-
-
-## SAMPLE CODE INSTRUCTIONS
-
-
-![](img\change-repo-name.PNG)
-
-
-
-
+To make sure that we did that correctly, run
+`echo $AWS_PROFILE`
+and it should return the value `claudia`.
 
 # Write the code
 Here is where the groups will copy the code. Just follow the article and we should be fine.
@@ -157,3 +121,37 @@ todo: ^^ make more detailed instructions for finding function-name
 Run `claudia test-lambda` and you should receive an update. You're all done!
 
 If you want to see a slack message come up now, run `claudia test-lambda`.
+
+
+Great, now we're ready to start.
+
+* Explanations of the what **and** the why behind each step. Try to include:
+  * higher level concepts
+  * best practices
+
+Remember to explain any notation you are using.
+
+```javascript
+/* and use code blocks for any code! */
+```
+
+![screen shots are helpful](img/screenshot.png)
+
+:sunglasses: GitHub markdown files [support emoji notation](http://www.emoji-cheat-sheet.com/)
+
+Here's a resource for [github markdown](https://guides.github.com/features/mastering-markdown/).
+
+
+## Summary / What you Learned
+
+* [ ] can be checkboxes
+
+## Resources
+
+* cite any resources
+
+
+## SAMPLE CODE INSTRUCTIONS
+
+
+![](img\change-repo-name.PNG)
