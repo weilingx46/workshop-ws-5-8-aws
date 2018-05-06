@@ -14,11 +14,13 @@ Brief motivation here as well as in presentation
 Summary of what we're about to do.
 
 ## Setup
+- Fork this repo. Make sure to change the name of the directory to `workshop-ws-5-8-aws-YOUR-NAME`.
+To do this go to settings and change Repository name. You need to do this because when claudia uploads to lambda function to aws, it uses the directory name as the function name and if everyone has the same directory name then there will be conflicting function names and no one will be able to deploy.
 
 ### Sign up for a free AWS account
-- click [here](https://aws.amazon.com/) and then on Create A Free Account. Enter your information!
+- click [here](https://aws.amazon.com/) and then on Create A Free Account. Enter your information.
 We chose personal account, but it shouldn't matter. You'll have to enter your credit card information, because after the first 12 months AWS starts to bill you (don't worry we will cancel
-our account at the end of class). 
+our account at the end of class).
 
 ## Step by Step
 
@@ -50,7 +52,7 @@ Here's a resource for [github markdown](https://guides.github.com/features/maste
 
 
 ## SAMPLE CODE INSTRUCTIONS
-#When forking/cloning the repo, try to change the name of the directory. You need to do this because when claudia uploads to lambda function to aws, it uses the directory name as the function name and if everyone has the same direcotry name then there will be conflicting function names and no one will be able to deploy. Change the directory to `workshop-ws-5-8-aws-YOUR-NAME`.
+
 
 ![](img\change-repo-name.PNG)
 
