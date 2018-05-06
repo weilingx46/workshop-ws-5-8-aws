@@ -15,8 +15,10 @@ Summary of what we're about to do.
 
 ## Setup
 
-### Sign up for AWS
-- todo: add detailed instructions for signing up for a *free* AWS account at https://aws.amazon.com/
+### Sign up for a free AWS account
+- click [here](https://aws.amazon.com/) and then on Create A Free Account. Enter your information!
+We chose personal account, but it shouldn't matter. You'll have to enter your credit card information, because after the first 12 months AWS starts to bill you (don't worry we will cancel
+our account at the end of class). 
 
 ## Step by Step
 
