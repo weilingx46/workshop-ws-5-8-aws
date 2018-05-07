@@ -149,7 +149,7 @@ Go to My Account and at the bottom of the page click Close Account.
 
 
 
-Great, now we're ready to start.
+
 
 * Explanations of the what **and** the why behind each step. Try to include:
   * higher level concepts
@@ -157,9 +157,6 @@ Great, now we're ready to start.
 
 Remember to explain any notation you are using.
 
-```javascript
-/* and use code blocks for any code! */
-```
 
 ![screen shots are helpful](img/screenshot.png)
 
@@ -170,8 +167,4 @@ Here's a resource for [github markdown](https://guides.github.com/features/maste
 
 
 
-
-## SAMPLE CODE INSTRUCTIONS
-
-
-![](img\change-repo-name.PNG)
+![hey](img\change-repo-name.PNG)
