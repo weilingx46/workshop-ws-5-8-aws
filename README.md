@@ -25,7 +25,7 @@ Change the name of the directory to `workshop-ws-5-8-aws-YOUR-NAME`
 Also change the name in `package-lock.json` and `package.json` to match your project directory name.
 ![](img/packageNameChange.png)
 
-:eyes:You need to do this because when claudia uploads to lambda function to aws, it uses the directory name as the function name and if everyone has the same directory name then there will be conflicting function names and no one will be able to deploy.
+:thought_balloon: You need to do this because when claudia uploads to lambda function to aws, it uses the directory name as the function name and if everyone has the same directory name then there will be conflicting function names and no one will be able to deploy.
 
 ### Sign up for a free AWS account
 click [here](https://aws.amazon.com/) and then on Create A Free Account. Enter your information.
@@ -41,7 +41,7 @@ our account at the end of class).
 In the top right click on your account name and then on My Security Credentials.
 ![](/img/securityCredentials.png)
 
-:eyes:Normally you'd want to get started with IAM users for security reasons, but since this is a
+:thought_balloon: Normally you'd want to get started with IAM users for security reasons, but since this is a
 quick workshop and we will be canceling our AWS account just click on Continue to Security Credentials.
 
 Expand the Access keys tab and click on Create New Access Key. Hold on to the **access key** and **secret key**.
@@ -61,7 +61,7 @@ Note that we are working in *us-east-2* as our region!
 Also don't worry about the Default Output Format, just hit enter!
 
 ### Download claudia.js
-:eyes: Claudia.js is a nice package that allows us to treat infrastructure as code. It lets us take any function we write and upload it as a lambda function. We could do this manually on AWS, by clicking around through a bunch of menus, but that wouldn't be very ~software engineer~ of us.
+:thought_balloon: Claudia.js is a nice package that allows us to treat infrastructure as code. It lets us take any function we write and upload it as a lambda function. We could do this manually on AWS, by clicking around through a bunch of menus, but that wouldn't be very ~software engineer~ of us.
 
 `npm install claudia -g`
 
