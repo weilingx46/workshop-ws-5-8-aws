@@ -73,8 +73,6 @@ To make sure that we did that correctly, run `echo $AWS_PROFILE` and it should r
 ### Configure Slack WebHooks
 We have already provided you with the code, so no need to copy and paste :smile:
 
-:zap: EXPLAIN CODE
-
 Now, to set up our Slack personal channel! Click [here](https://cs52-dartmouth.slack.com/apps/A0F7XDUAZ-incoming-webhooks?page=1), go to Add Configuration and in the drop down menu select Privately to yourself.
 ![](/img/webhooks.png)
 
@@ -100,6 +98,7 @@ You should now see `claudia.json` in your directory. It should look like this:
 The "role" and "name" shouldn't match the above but they should be there.
 
 Run:
+
 `aws events put-rule --name hackerNewsDigest --schedule-expression 'cron(0/59 * * * ? *)'`
 
 This sets the Slack message as an event to trigger every hour (potential extra credit could be for someone to make this trigger once a day rather than every hour).
@@ -137,7 +136,6 @@ Now, let's test it! Run `claudia test-lambda`. You should see a slack message in
 Since we do not want you to get billed, close your account! Go to My Account and at the bottom of the page click Close Account.
 
 ## Summary / What you Learned
-
 * [x] Create an AWS Account
 * [x] Set up Claudia
 
