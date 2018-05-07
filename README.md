@@ -14,8 +14,9 @@ Brief motivation here as well as in presentation
 Summary of what we're about to do.
 
 ## Setup
-- As usual, Fork this repo!
-- Make sure to change the name of the directory to `workshop-ws-5-8-aws-YOUR-NAME`
+As usual, Fork this repo!
+
+Make sure to change the name of the directory to `workshop-ws-5-8-aws-YOUR-NAME`
 ![](img/repoNameChange.png)
 Also change the name in `package-lock.json` and `package.json` to match your project directory name.
 ![](img/packageNameChange.png)
@@ -23,7 +24,7 @@ Also change the name in `package-lock.json` and `package.json` to match your pro
 You need to do this because when claudia uploads to lambda function to aws, it uses the directory name as the function name and if everyone has the same directory name then there will be conflicting function names and no one will be able to deploy.
 
 ### Sign up for a free AWS account
-- click [here](https://aws.amazon.com/) and then on Create A Free Account. Enter your information.
+click [here](https://aws.amazon.com/) and then on Create A Free Account. Enter your information.
 We chose personal account, but it shouldn't matter. You'll have to enter your credit card information, because after the first 12 months AWS starts to bill you (don't worry we will cancel
 our account at the end of class).
 
@@ -33,7 +34,7 @@ our account at the end of class).
 `pip install awscli`
 
 ### Configure AWS-CLI with your proper credentials
-- In the top right click on your account name and then on My Security Credentials. Expand Access
+In the top right click on your account name and then on My Security Credentials. Expand Access
 keys tab and click on Create New Access Key. Hold on to the **access key** and **secret key**.
 
 Run
@@ -161,8 +162,6 @@ Go to My Account and at the bottom of the page click Close Account.
 
 Remember to explain any notation you are using.
 
-
-![screen shots are helpful](img/screenshot.png)
 
 :sunglasses: GitHub markdown files [support emoji notation](http://www.emoji-cheat-sheet.com/)
 
