@@ -13,11 +13,15 @@ Brief motivation here as well as in presentation
 
 Summary of what we're about to do.
 
+* [ ] Create an AWS Account
+* [ ] Set up Claudia
+
 ## Setup
 As usual, Fork this repo!
 
-Make sure to change the name of the directory to `workshop-ws-5-8-aws-YOUR-NAME`
+Change the name of the directory to `workshop-ws-5-8-aws-YOUR-NAME`
 ![](img/repoNameChange.png)
+
 Also change the name in `package-lock.json` and `package.json` to match your project directory name.
 ![](img/packageNameChange.png)
 
@@ -34,8 +38,14 @@ our account at the end of class).
 `pip install awscli`
 
 ### Configure AWS-CLI with your proper credentials
-In the top right click on your account name and then on My Security Credentials. Expand Access
-keys tab and click on Create New Access Key. Hold on to the **access key** and **secret key**.
+In the top right click on your account name and then on My Security Credentials.
+![](/img/securityCredentials.png)
+
+Normally you'd want to get started with IAM users for security reasons, but since this is a
+quick workshop and we will be canceling our AWS account just click on Continue to Security Credentials.
+
+Expand the Access keys tab and click on Create New Access Key. Hold on to the **access key** and **secret key**.
+![](/img/securityKeys.png)
 
 Run
 `aws configure`
@@ -54,8 +64,6 @@ Claudia.js is a nice package that allows us to treat infrastructure as code. It 
 `npm install claudia -g`
 
 ### Set up claudia.js
-https://claudiajs.com/tutorials/installing.html
-
 Open up your `~/.aws/credentials` file (by running `atom ~/.aws/credentials` in terminal) and make it look like this:
 
 ```
@@ -65,21 +73,21 @@ aws_access_key_id = INSERT-YOUR-SECRET-KEY
 ```
 
 And then, run set AWS_PROFILE environment variable to claudia with the following command in your top-level project directory:
+`export AWS_PROFILE=claudia`
 
-```
-export AWS_PROFILE=claudia
-```
 To make sure that we did that correctly, run
 `echo $AWS_PROFILE`
 and it should return the value `claudia`.
 
-### Write the code
+### Configure Slack Webhooks
 We have already provided you with the code, so no need to copy and paste:smile:!!!
 EXPLAIN CODE
 
 Now, to set up our Slack personal channel!
 Click [here](https://cs52-dartmouth.slack.com/apps/A0F7XDUAZ-incoming-webhooks?page=1)
 Go to Add Configuration and in the drop down menu choose Select Privately to yourself.
+![](/img/webhooks.png)
+
 Click on Add Incoming Webhooks Integration and copy the webhook URL and paste it into `env.json`.
 
 ### Deploy to aws with Claudia
@@ -101,7 +109,7 @@ You should now see `claudia.json` in your directory. It should look like this:
 
 The "role" and "name" shouldn't match the above ^^ but they should be there.
 
-Run this code
+Run:
 `aws events put-rule --name hackerNewsDigest --schedule-expression 'cron(0/59 * * * ? *)'`
 This sets the slack message as an event to trigger every hour (potential extra credit could be for someone to make this trigger once a day rather than every hour).
 
