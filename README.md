@@ -24,10 +24,10 @@ our account at the end of class).
 
 ## Step by Step
 
-# Download aws-cli
+### Download aws-cli
 `pip install awscli`
 
-# Configure AWS-CLI with your proper credentials
+### Configure AWS-CLI with your proper credentials
 - In the top right click on your account name and then on My Security Credentials. Expand Access
 keys tab and click on Create New Access Key. Hold on to the **access key** and **secret key**.
 Run
@@ -40,12 +40,12 @@ Default Region name = us-east-2
 ```
 Note that we are working in *us-east-2* as our region!!
 
-# Download claudia.js
+### Download claudia.js
 Claudia.js is a nice package that allows us to treat infrastructure as code. It lets us take any function we write and upload it as a lambda function. We could do this manually on AWS, by clicking around through a bunch of menus, but that wouldn't be very ~software engineer-y~ of us.
 
 `npm install claudia -g`
 
-# Set up claudia.js
+### Set up claudia.js
 https://claudiajs.com/tutorials/installing.html
 
 Open up your `~/.aws/credentials` file (by running `atom ~/.aws/credentials` in terminal) and make it look like this:
@@ -65,13 +65,14 @@ To make sure that we did that correctly, run
 `echo $AWS_PROFILE`
 and it should return the value `claudia`.
 
-# Write the code
+### Write the code
 Here is where the groups will copy the code. Just follow the article and we should be fine.
 
 Eventually, we need to make our `env.json` file and set our `SlackWebhookUrl`. To do this, we need to go to https://cs52-dartmouth.slack.com/apps/A0F7XDUAZ-incoming-webhooks?page=1 -> Add Configuration -> Choose Channel Dropdown -> Select Privately to yourself -> Add incoming webhooks integration -> Copy the webhook URL.
 
 
-# Deploy to aws with Claudia
+### Deploy to aws with Claudia
+change your name to in `package-lock.json` and `package.json` to match your directory name.
 
 ```
 claudia create --region us-east-2 --handler index.handler --timeout 10 --set-env-from-json env.json
@@ -121,6 +122,10 @@ todo: ^^ make more detailed instructions for finding function-name
 Run `claudia test-lambda` and you should receive an update. You're all done!
 
 If you want to see a slack message come up now, run `claudia test-lambda`.
+
+### Close your AWS Account
+Since we don't want you to get billed, close your account!!!
+Go to My Account and at the bottom of the page click Close Account.
 
 ## Summary / What you Learned
 
