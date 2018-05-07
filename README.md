@@ -4,11 +4,9 @@
 
 ![](https://static1.squarespace.com/static/599bfc6803596ef973b3fade/t/5adde270575d1f40f9b86b12/1524490877466/Amazon+Web+Serives)
 
-
 Authors: Katherine Bernardez, Robert Crawford, Alexander Danilowicz, Lindsey Hodel, Stephen Liao
 
 ## Overview
-
 Summary of what we are about to do.
 
 * [ ] Create an AWS Account
@@ -17,16 +15,16 @@ Summary of what we are about to do.
 ## Setup
 As usual, fork this repo!
 
-Change the name of the directory to `workshop-ws-5-8-aws-YOUR-NAME`
+Change the name of the directory to `workshop-ws-5-8-aws-YOUR-NAME`.
 ![](img/repoNameChange.png)
 
 Also change the name in `package-lock.json` and `package.json` to match your project directory name.
 ![](img/packageNameChange.png)
 
-:thought_balloon: You need to do this because when Claudia uploads to Lambda function to AWS, it uses the directory name as the function name and if everyone has the same directory name then there will be conflicting function names and no one will be able to deploy.
+:thought_balloon: You need to do this because when Claudia uploads Lambda function to AWS, it uses the directory name as the function name and if everyone has the same directory name then there will be conflicting function names and no one will be able to deploy.
 
 ### Sign up for a free AWS account
-Click [here](https://aws.amazon.com/) and then on Create A Free Account. Enter your information. We chose personal account, but it should not matter. You will have to enter your credit card information, because after the first 12 months AWS starts to bill you (do not worry we will cancel our account at the end of class).
+Click [here](https://aws.amazon.com/) and then on Create A Free Account. Enter your information. We chose Personal Account, but it should not matter. You will have to enter your credit card information, because after the first 12 months AWS starts to bill you (do not worry we will cancel our account at the end of class).
 
 ## Step by Step
 
@@ -37,7 +35,7 @@ Click [here](https://aws.amazon.com/) and then on Create A Free Account. Enter y
 In the top right click on your account name and then on My Security Credentials.
 ![](/img/securityCredentials.png)
 
-:thought_balloon: Normally you wouldd want to get started with IAM users for security reasons, but since this is a quick workshop and we will be canceling our AWS account just click on Continue to Security Credentials.
+:thought_balloon: Normally you would want to get started with IAM users for security reasons, but since this is a quick workshop and we will be canceling our AWS account just click on Continue to Security Credentials.
 
 Expand the Access keys tab and click on Create New Access Key. Hold on to the **access key** and **secret key**.
 ![](/img/securityKeys.png)
@@ -52,7 +50,7 @@ AWS Secret Key = INSERT-YOUR-SECRET-KEY
 Default Region name = us-east-2
 ```
 
-Note that we are working in *us-east-2* as our region! Also do not worry about the Default Output Format, just hit enter!
+Note that we are working in *us-east-2* as our region. Also do not worry about the Default Output Format, just hit enter!
 
 ### Download Claudia.js
 :thought_balloon: Claudia.js is a nice package that allows us to treat infrastructure as code. It lets us take any function we write and upload it as a Lambda function. We could do this manually on AWS, by clicking around through a bunch of menus, but that wouldn't be very ~software engineer~ of us.
@@ -60,7 +58,7 @@ Note that we are working in *us-east-2* as our region! Also do not worry about t
 `npm install claudia -g`
 
 ### Set up Claudia.js
-Open up your `~/.aws/credentials` file (by running `atom ~/.aws/credentials` in terminal) and make it look like this:
+Open up your `~/.aws/credentials` file by running `atom ~/.aws/credentials` in terminal and make it look like this:
 
 ```
 [claudia]
@@ -72,15 +70,15 @@ And then, set AWS_PROFILE environment variable to Claudia with the following com
 
 To make sure that we did that correctly, run `echo $AWS_PROFILE` and it should return the value `claudia`.
 
-### Configure Slack Webhooks
-We have already provided you with the code, so no need to copy and paste :smile:!!!
+### Configure Slack WebHooks
+We have already provided you with the code, so no need to copy and paste :smile:
 
 :zap: EXPLAIN CODE
 
 Now, to set up our Slack personal channel! Click [here](https://cs52-dartmouth.slack.com/apps/A0F7XDUAZ-incoming-webhooks?page=1), go to Add Configuration and in the drop down menu select Privately to yourself.
 ![](/img/webhooks.png)
 
-Click on Add Incoming Webhooks Integration, copy the webhook URL and paste it into `env.json`.
+Click on Add Incoming WebHooks Integration, copy the Webhook URL and paste it into `env.json`.
 
 ### Deploy to AWS with Claudia
 ```
@@ -136,7 +134,7 @@ Now, let's test it! Run `claudia test-lambda`. You should see a slack message in
 :tada: You're all done! :tada:
 
 ### Close your AWS Account
-Since we do not want you to get billed, close your account!!! Go to My Account and at the bottom of the page click Close Account.
+Since we do not want you to get billed, close your account! Go to My Account and at the bottom of the page click Close Account.
 
 ## Summary / What you Learned
 
@@ -144,7 +142,6 @@ Since we do not want you to get billed, close your account!!! Go to My Account a
 * [x] Set up Claudia
 
 ## Resources
-
 * https://medium.freecodecamp.org/scheduling-slack-messages-using-aws-lambda-e56a8eb22818
 * https://claudiajs.com/tutorials/installing.html
 * https://aws.amazon.com/
