@@ -122,6 +122,15 @@ Run `claudia test-lambda` and you should receive an update. You're all done!
 
 If you want to see a slack message come up now, run `claudia test-lambda`.
 
+## Summary / What you Learned
+
+* [ ] can be checkboxes
+
+## Resources
+
+* https://medium.freecodecamp.org/scheduling-slack-messages-using-aws-lambda-e56a8eb22818
+* https://claudiajs.com/tutorials/installing.html
+* https://aws.amazon.com/
 
 Great, now we're ready to start.
 
@@ -142,13 +151,7 @@ Remember to explain any notation you are using.
 Here's a resource for [github markdown](https://guides.github.com/features/mastering-markdown/).
 
 
-## Summary / What you Learned
 
-* [ ] can be checkboxes
-
-## Resources
-
-* cite any resources
 
 
 ## SAMPLE CODE INSTRUCTIONS
