@@ -25,7 +25,7 @@ Change the name of the directory to `workshop-ws-5-8-aws-YOUR-NAME`
 Also change the name in `package-lock.json` and `package.json` to match your project directory name.
 ![](img/packageNameChange.png)
 
-You need to do this because when claudia uploads to lambda function to aws, it uses the directory name as the function name and if everyone has the same directory name then there will be conflicting function names and no one will be able to deploy.
+:eyes:You need to do this because when claudia uploads to lambda function to aws, it uses the directory name as the function name and if everyone has the same directory name then there will be conflicting function names and no one will be able to deploy.
 
 ### Sign up for a free AWS account
 click [here](https://aws.amazon.com/) and then on Create A Free Account. Enter your information.
@@ -41,14 +41,16 @@ our account at the end of class).
 In the top right click on your account name and then on My Security Credentials.
 ![](/img/securityCredentials.png)
 
-Normally you'd want to get started with IAM users for security reasons, but since this is a
+:eyes:Normally you'd want to get started with IAM users for security reasons, but since this is a
 quick workshop and we will be canceling our AWS account just click on Continue to Security Credentials.
 
 Expand the Access keys tab and click on Create New Access Key. Hold on to the **access key** and **secret key**.
 ![](/img/securityKeys.png)
 
 Run
+
 `aws configure`
+
 On the command line, enter your access key and secret key as they come up.
 ```
 AWS Access Key Id = INSERT-YOUR-ACCESS-KEY
@@ -59,7 +61,7 @@ Note that we are working in *us-east-2* as our region!
 Also don't worry about the Default Output Format, just hit enter!
 
 ### Download claudia.js
-Claudia.js is a nice package that allows us to treat infrastructure as code. It lets us take any function we write and upload it as a lambda function. We could do this manually on AWS, by clicking around through a bunch of menus, but that wouldn't be very ~software engineer~ of us.
+:eyes: Claudia.js is a nice package that allows us to treat infrastructure as code. It lets us take any function we write and upload it as a lambda function. We could do this manually on AWS, by clicking around through a bunch of menus, but that wouldn't be very ~software engineer~ of us.
 
 `npm install claudia -g`
 
@@ -81,7 +83,8 @@ and it should return the value `claudia`.
 
 ### Configure Slack Webhooks
 We have already provided you with the code, so no need to copy and paste:smile:!!!
-EXPLAIN CODE
+
+:zap:EXPLAIN CODE
 
 Now, to set up our Slack personal channel!
 Click [here](https://cs52-dartmouth.slack.com/apps/A0F7XDUAZ-incoming-webhooks?page=1)
@@ -110,7 +113,9 @@ You should now see `claudia.json` in your directory. It should look like this:
 The "role" and "name" shouldn't match the above ^^ but they should be there.
 
 Run:
+
 `aws events put-rule --name hackerNewsDigest --schedule-expression 'cron(0/59 * * * ? *)'`
+
 This sets the slack message as an event to trigger every hour (potential extra credit could be for someone to make this trigger once a day rather than every hour).
 
 Running the above command will output the `arn` of the task. The output will look something like:
@@ -143,7 +148,7 @@ Now, let's test it!
 run `claudia test-lambda`
 You should see a slack message in your personal channel!
 
-You're all done!
+:tada:You're all done!:tada:
 
 ### Close your AWS Account
 Since we don't want you to get billed, close your account!!!
@@ -158,19 +163,3 @@ Go to My Account and at the bottom of the page click Close Account.
 * https://medium.freecodecamp.org/scheduling-slack-messages-using-aws-lambda-e56a8eb22818
 * https://claudiajs.com/tutorials/installing.html
 * https://aws.amazon.com/
-
-
-
-
-
-
-* Explanations of the what **and** the why behind each step. Try to include:
-  * higher level concepts
-  * best practices
-
-Remember to explain any notation you are using.
-
-
-:sunglasses: GitHub markdown files [support emoji notation](http://www.emoji-cheat-sheet.com/)
-
-Here's a resource for [github markdown](https://guides.github.com/features/mastering-markdown/).
