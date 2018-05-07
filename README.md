@@ -15,7 +15,9 @@ Summary of what we're about to do.
 
 ## Setup
 - Fork this repo. Make sure to change the name of the directory to `workshop-ws-5-8-aws-YOUR-NAME`.
-To do this go to settings and change Repository name. You need to do this because when claudia uploads to lambda function to aws, it uses the directory name as the function name and if everyone has the same directory name then there will be conflicting function names and no one will be able to deploy.
+To do this go to settings and change Repository name. Also change the name in `package-lock.json` and `package.json` to match your project directory name.
+
+You need to do this because when claudia uploads to lambda function to aws, it uses the directory name as the function name and if everyone has the same directory name then there will be conflicting function names and no one will be able to deploy.
 
 ### Sign up for a free AWS account
 - click [here](https://aws.amazon.com/) and then on Create A Free Account. Enter your information.
@@ -38,10 +40,11 @@ AWS Access Key Id = INSERT-YOUR-ACCESS-KEY
 AWS Secret Key = INSERT-YOUR-SECRET-KEY
 Default Region name = us-east-2
 ```
-Note that we are working in *us-east-2* as our region!!
+Note that we are working in *us-east-2* as our region!
+Also don't worry about the Default Output Format, just hit enter!
 
 ### Download claudia.js
-Claudia.js is a nice package that allows us to treat infrastructure as code. It lets us take any function we write and upload it as a lambda function. We could do this manually on AWS, by clicking around through a bunch of menus, but that wouldn't be very ~software engineer-y~ of us.
+Claudia.js is a nice package that allows us to treat infrastructure as code. It lets us take any function we write and upload it as a lambda function. We could do this manually on AWS, by clicking around through a bunch of menus, but that wouldn't be very ~software engineer~ of us.
 
 `npm install claudia -g`
 
@@ -56,7 +59,7 @@ aws_secret_access_id = INSERT-YOUR-ACCESS-KEY
 aws_access_key_id = INSERT-YOUR-SECRET-KEY
 ```
 
-And then, run set AWS_PROFILE environment variable to claudia with the following command in your top-level project dir:
+And then, run set AWS_PROFILE environment variable to claudia with the following command in your top-level project directory:
 
 ```
 export AWS_PROFILE=claudia
@@ -66,14 +69,15 @@ To make sure that we did that correctly, run
 and it should return the value `claudia`.
 
 ### Write the code
-Here is where the groups will copy the code. Just follow the article and we should be fine.
+We have already provided you with the code, so no need to copy and paste:smile:!!!
+EXPLAIN CODE
 
-Eventually, we need to make our `env.json` file and set our `SlackWebhookUrl`. To do this, we need to go to https://cs52-dartmouth.slack.com/apps/A0F7XDUAZ-incoming-webhooks?page=1 -> Add Configuration -> Choose Channel Dropdown -> Select Privately to yourself -> Add incoming webhooks integration -> Copy the webhook URL.
-
+Now, to set up our Slack personal channel!
+Click [here](https://cs52-dartmouth.slack.com/apps/A0F7XDUAZ-incoming-webhooks?page=1)
+Go to Add Configuration and in the drop down menu choose Select Privately to yourself.
+Click on Add Incoming Webhooks Integration and copy the webhook URL and paste it into `env.json`.
 
 ### Deploy to aws with Claudia
-change your name to in `package-lock.json` and `package.json` to match your directory name.
-
 ```
 claudia create --region us-east-2 --handler index.handler --timeout 10 --set-env-from-json env.json
 ```
@@ -90,38 +94,43 @@ You should now see `claudia.json` in your directory. It should look like this:
 }
 ```
 
-The "role" and "name" don't have to match the above ^^ but they should be there.
-Run this code
+The "role" and "name" shouldn't match the above ^^ but they should be there.
 
-`aws events put-rule --name hackerNewsDigest --schedule-expression 'cron(0/59 * * * ? *)'` Sets this as an event to trigger every hour (potential extra credit could be for someone to make this trigger once a day rather than every hour).
+Run this code
+`aws events put-rule --name hackerNewsDigest --schedule-expression 'cron(0/59 * * * ? *)'`
+This sets the slack message as an event to trigger every hour (potential extra credit could be for someone to make this trigger once a day rather than every hour).
 
 Running the above command will output the `arn` of the task. The output will look something like:
 
 ```
 {
-   “Statement”: “{\“Sid\“:\“hackernews-scheduled-messages\“,\“Effect\“:\“Allow\“,\“Principal\“:{\“Service\“:\“events.amazonaws.com\“},\“Action\“:\“lambda:InvokeFunction\“,\“Resource\“:\“arn:aws:lambda:us-east-2:916258591510:function:workshop-ws-5-8-aws\“,\“Condition\“:{\“ArnLike\“:{\“AWS:SourceArn\“:\“arn:aws:events:us-east-2:916258591510:rule/hackerNewsDigest\“}}}”
+    "RuleArn": "arn:aws:events:us-east-2:860157212032:rule/hackerNewsDigest"
 }
 ```
-We want to *copy* this: `arn:aws:lambda:us-east-2:916258591510:function:workshop-ws-5-8-aws\`
 
-Now, run this function with the string you just copied into INSERT-YOUR-ARN:
+Now, run this function with the RuleArn string in place of INSERT-YOUR-ARN and your project
+directory name in place of workshop-ws-5-8-aws-YOUR-NAME:
+
 ```
 aws lambda add-permission \
   --statement-id 'hackernews-scheduled-messages' \
   --action 'lambda:InvokeFunction' \
   --principal 'events.amazonaws.com' \
   --source-arn INSERT-YOUR-ARN \
-  --function-name functionName \
-  --region region
+  --function-name workshop-ws-5-8-aws-YOUR-NAME \
+  --region us-east-2
 ```
 
-`ruleArn` is the output from the `aws events...` command. `function-name` can be found by going to the aws console -> services -> lambda -> Functions.
+`ruleArn` is the output from the `aws events...` command. `function-name` can also be found by going to the AWS console -> services -> lambda -> Functions.
 
-todo: ^^ make more detailed instructions for finding function-name
+Run `claudia test-lambda`
+and you should receive an update.
 
-Run `claudia test-lambda` and you should receive an update. You're all done!
+Now, let's test it!
+run `claudia test-lambda`
+You should see a slack message in your personal channel!
 
-If you want to see a slack message come up now, run `claudia test-lambda`.
+You're all done!
 
 ### Close your AWS Account
 Since we don't want you to get billed, close your account!!!
@@ -136,6 +145,9 @@ Go to My Account and at the bottom of the page click Close Account.
 * https://medium.freecodecamp.org/scheduling-slack-messages-using-aws-lambda-e56a8eb22818
 * https://claudiajs.com/tutorials/installing.html
 * https://aws.amazon.com/
+
+
+
 
 Great, now we're ready to start.
 
