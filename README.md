@@ -169,6 +169,12 @@ It should look like this!
 * [x] How to configure `awscli`
 * [x] How to be an AWS god.
 
+
+## Extra Credit
+The world is your oyster!
+
+* [x] Use a different news API 
+
 ## Resources
 * [Medium Article with a similar workshop](https://medium.freecodecamp.org/scheduling-slack-messages-using-aws-lambda-e56a8eb22818)
 * [AWS Homepage](https://aws.amazon.com/)
