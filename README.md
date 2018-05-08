@@ -4,13 +4,13 @@
 Authors: Katherine Bernardez, Robert Crawford, Alexander Danilowicz, Lindsey Hodel, Thomas Kim, Stephen Liao
 
 ## Overview
-We are making a SlackBot that direct messages you the five latest stories from [Hacker News](https://news.ycombinator.com/). Here is an abstract diagram of what we are doing.
+We will be making a Slack app that sends the top five stories from [Hacker News](https://news.ycombinator.com/) to your Slack channel. Here is the flow:
 
 ![](img/overviewImage.png)
 
 *This image is from this [Medium article](https://medium.freecodecamp.org/scheduling-slack-messages-using-aws-lambda-e56a8eb22818), which we based our workshop off of because it is so awesome!*
 
-### What you will learn:
+### What you will learn
 * [ ] Create an AWS Account
 * [ ] Set up Claudia
 * [ ] Deploy a Lambda function to the cloud
