@@ -7,10 +7,17 @@
 Authors: Katherine Bernardez, Robert Crawford, Alexander Danilowicz, Lindsey Hodel, Stephen Liao
 
 ## Overview
-Summary of what we are about to do.
+We are making a SlackBot that sends you the five latest stories from [Hacker News](https://news.ycombinator.com/). Here is an abstract diagram of what we are doing.
+![](img/overviewImage.png
+
+*This image is from this [Medium article] (https://medium.freecodecamp.org/scheduling-slack-messages-using-aws-lambda-e56a8eb22818), which we based our workshop off of because it's so awesome!*
 
 * [ ] Create an AWS Account
 * [ ] Set up Claudia
+* [ ] Deploy a Lambda function to the cloud
+* [ ] How to integrate APIs (in this case Hacker News) with AWS
+* [ ] How to configure `awscli`
+* [ ] How to be an AWS god.
 
 ## Setup
 As usual, fork this repo!
@@ -21,7 +28,7 @@ Change the name of the directory to `workshop-ws-5-8-aws-YOUR-NAME`.
 Also change the name in `package-lock.json` and `package.json` to match your project directory name.
 ![](img/packageNameChange.png)
 
-:thought_balloon: You need to do this because when Claudia uploads Lambda function to AWS, it uses the directory name as the function name and if everyone has the same directory name then there will be conflicting function names and no one will be able to deploy.
+:thought_balloon: You need to do this because when Claudia uploads the Lambda function to AWS, it uses the directory name as the function name and if everyone has the same directory name then there will be conflicting function names and no one will be able to deploy.
 
 ### Sign up for a free AWS account
 Click [here](https://aws.amazon.com/) and then on Create A Free Account. Enter your information. We chose Personal Account, but it should not matter. You will have to enter your credit card information, because after the first 12 months AWS starts to bill you (do not worry we will cancel our account at the end of class).
@@ -157,12 +164,11 @@ It should look like this!
 ## Summary / What you Learned
 * [x] Create an AWS Account
 * [x] Set up Claudia
-* [x] Deploy a lambda function to the cloud
-* [x] How to integrate APIs (in this case hackernews) with AWS
+* [x] Deploy a Lambda function to the cloud
+* [x] How to integrate APIs (in this case Hacker News) with AWS
 * [x] How to configure `awscli`
 * [x] How to be an AWS god.
 
 ## Resources
 * [Medium Article with a similar workshop](https://medium.freecodecamp.org/scheduling-slack-messages-using-aws-lambda-e56a8eb22818)
-* [Claudia documentation](https://medium.freecodecamp.org/scheduling-slack-messages-using-aws-lambda-e56a8eb22818)
 * [AWS Homepage](https://aws.amazon.com/)
