@@ -1,17 +1,16 @@
-
-
 # CS52 Workshops:  AWS (Amazon Web Services) Workshop
-
 ![](https://static1.squarespace.com/static/599bfc6803596ef973b3fade/t/5adde270575d1f40f9b86b12/1524490877466/Amazon+Web+Serives)
 
-Authors: Katherine Bernardez, Robert Crawford, Alexander Danilowicz, Lindsey Hodel, Stephen Liao
+Authors: Katherine Bernardez, Robert Crawford, Alexander Danilowicz, Lindsey Hodel, Thomas Kim, Stephen Liao
 
 ## Overview
-We are making a SlackBot that sends you the five latest stories from [Hacker News](https://news.ycombinator.com/). Here is an abstract diagram of what we are doing.
+We are making a SlackBot that direct messages you the five latest stories from [Hacker News](https://news.ycombinator.com/). Here is an abstract diagram of what we are doing.
+
 ![](img/overviewImage.png)
 
-*This image is from this [Medium article](https://medium.freecodecamp.org/scheduling-slack-messages-using-aws-lambda-e56a8eb22818), which we based our workshop off of because it's so awesome!*
+*This image is from this [Medium article](https://medium.freecodecamp.org/scheduling-slack-messages-using-aws-lambda-e56a8eb22818), which we based our workshop off of because it is so awesome!*
 
+### What you will learn:
 * [ ] Create an AWS Account
 * [ ] Set up Claudia
 * [ ] Deploy a Lambda function to the cloud
