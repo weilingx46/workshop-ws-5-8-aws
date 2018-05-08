@@ -16,7 +16,7 @@ We will be making a Slack app that sends the top five stories from [Hacker News]
 * [ ] Deploy a Lambda function to the cloud
 * [ ] How to integrate APIs (in this case Hacker News) with AWS
 * [ ] How to configure `awscli`
-* [ ] How to be an AWS god.
+* [ ] How to be an AWS god
 
 ## Setup
 As usual, fork this repo!
@@ -30,7 +30,7 @@ Also change the name in `package-lock.json` and `package.json` to match your pro
 :thought_balloon: You need to do this because when Claudia uploads the Lambda function to AWS, it uses the directory name as the function name and if everyone has the same directory name then there will be conflicting function names and no one will be able to deploy.
 
 ### Sign up for a free AWS account
-Click [here](https://aws.amazon.com/) and then on Create A Free Account. Enter your information. We chose Personal Account, but it should not matter. You will have to enter your credit card information, because after the first 12 months AWS starts to bill you (do not worry we will cancel our account at the end of class).
+Click [here](https://aws.amazon.com/) and then on Create A Free Account. Enter your information. We chose Personal Account, but it should not matter. You will have to enter your credit card information because after the first 12 months AWS starts to bill you (do not worry we will cancel our account at the end of class).
 
 ## Step by Step
 
@@ -38,7 +38,7 @@ Click [here](https://aws.amazon.com/) and then on Create A Free Account. Enter y
 `pip install awscli`
 
 ### Configure AWS-CLI with your proper credentials
-In the top right click on your account name and then on My Security Credentials.
+On the AWS website in the top right click on your account name and then on My Security Credentials.
 ![](/img/securityCredentials.png)
 
 :thought_balloon: Normally you would want to get started with IAM users for security reasons, but since this is a quick workshop and we will be canceling our AWS account just click on Continue to Security Credentials.
@@ -54,10 +54,10 @@ On the command line, enter your access key and secret key as they come up.
 AWS Access Key Id = COPY-PASTE-YOUR-ACCESS-KEY
 AWS Secret Key = COPY-PASTE-YOUR-SECRET-KEY
 Default Region name = us-east-2
-Default Output format = [don't worry about this, hit enter]
+Default Output format = [do not worry about this, hit enter]
 ```
 
-:heavy_exclamation_mark: Note that we are working in **us-east-2** as our region. (Fun fact: this is AWS center located in Ohio, which is closest to Hanover!)
+:heavy_exclamation_mark: Note that we are working in **us-east-2** as our region. (Fun fact: this is the AWS center located in Ohio, which is closest to Hanover!)
 
 ### Download Claudia.js
 :thought_balloon: Claudia.js is a nice package that allows us to treat infrastructure as code. It lets us take any function we write and upload it as a Lambda function. We could do this manually on AWS, by clicking around through a bunch of menus, but that wouldn't be very ~software engineer~ of us.
@@ -65,7 +65,7 @@ Default Output format = [don't worry about this, hit enter]
 `npm install claudia -g`
 
 ### Set up Claudia.js
-Open up your `~/.aws/credentials` file by running `atom ~/.aws/credentials` in terminal and make it look like this:
+Open up your `~/.aws/credentials` file by running `atom ~/.aws/credentials` in Terminal and make it look like this.
 
 :heavy_exclamation_mark: Your current file should look like this:
 
@@ -128,10 +128,9 @@ Running the above command will output the `arn` of the task. The output will loo
 }
 ```
 
-Now, run this function with the RuleArn string in place of INSERT-YOUR-ARN and your project
-directory name in place of workshop-ws-5-8-aws-YOUR-NAME.
+Now, run this function with the RuleArn string in place of INSERT-YOUR-ARN and your project directory name in place of workshop-ws-5-8-aws-YOUR-NAME.
 
-:heavy_exclamation_mark: You run this function in your terminal, but we recommend editing this command in Atom or your favorite text editor, so you don't mess up the syntax!
+:heavy_exclamation_mark: You run this function in your terminal, but we recommend editing this command in Atom or your favorite text editor, so you do not mess up the syntax!
 
 ```
 aws lambda add-permission \
@@ -143,18 +142,15 @@ aws lambda add-permission \
   --region us-east-2
 ```
 
-`ruleArn` is the output from the `aws events...` command. `function-name` can also be found by going to the AWS console -> services -> lambda -> Functions.
+`ruleArn` is the output from the `aws events...` command. `function-name` can also be found by going to the AWS Console -> Services -> Lambda -> Functions.
 
-Run `claudia test-lambda` and you should receive an update.
-
-Now, let's test it! Run `claudia test-lambda`. You should see a slack message in your personal channel!
-
+Now, let's test it! Run `claudia test-lambda`. You should see a Slack message in your personal channel!
 
 It should look like this!
 
 ![](/img/webhook.jpeg).
 
-:tada: You're all done! :tada:
+:tada: You are all done! :tada:
 
 ### Close your AWS Account
 
@@ -166,13 +162,12 @@ It should look like this!
 * [x] Deploy a Lambda function to the cloud
 * [x] How to integrate APIs (in this case Hacker News) with AWS
 * [x] How to configure `awscli`
-* [x] How to be an AWS god.
+* [x] How to be an AWS god
 
 ## Extra Credit
 The world is your oyster!
 
-* [x] Write a custom Cron expression to change the frequency of the lambda call. [Documentation here.](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html). It's a super long read, but but super useful explanation of serverless, claudia, and lambda.
-* [x] Use a different news API, this would involve editing the javascript functions we wrote, take a look!
+* [x] Use a different news API
 
 ## Resources
 * [Medium Article with a similar workshop](https://medium.freecodecamp.org/scheduling-slack-messages-using-aws-lambda-e56a8eb22818)
