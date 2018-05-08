@@ -45,12 +45,13 @@ Run `aws configure`.
 On the command line, enter your access key and secret key as they come up.
 
 ```
-AWS Access Key Id = INSERT-YOUR-ACCESS-KEY
-AWS Secret Key = INSERT-YOUR-SECRET-KEY
+AWS Access Key Id = COPY-PASTE-YOUR-ACCESS-KEY
+AWS Secret Key = COPY-PASTE-YOUR-SECRET-KEY
 Default Region name = us-east-2
+Default Output format = [don't worry about this, hit enter]
 ```
 
-Note that we are working in *us-east-2* as our region. Also do not worry about the Default Output Format, just hit enter!
+:heavy_exclamation_mark: Note that we are working in **us-east-2** as our region. (Fun fact: this is AWS center located in Ohio, which is closest to Hanover!)
 
 ### Download Claudia.js
 :thought_balloon: Claudia.js is a nice package that allows us to treat infrastructure as code. It lets us take any function we write and upload it as a Lambda function. We could do this manually on AWS, by clicking around through a bunch of menus, but that wouldn't be very ~software engineer~ of us.
@@ -59,6 +60,16 @@ Note that we are working in *us-east-2* as our region. Also do not worry about t
 
 ### Set up Claudia.js
 Open up your `~/.aws/credentials` file by running `atom ~/.aws/credentials` in terminal and make it look like this:
+
+:heavy_exclamation_mark: Your current file should look like this:
+
+```
+[default]
+aws_secret_access_id = INSERT-YOUR-ACCESS-KEY
+aws_access_key_id = INSERT-YOUR-SECRET-KEY
+```
+
+:100: You should change it so it looks like this! In other words, replace `[default]` with `[claudia]`.
 
 ```
 [claudia]
@@ -76,7 +87,7 @@ We have already provided you with the code, so no need to copy and paste :smile:
 Now, to set up our Slack personal channel! Click [here](https://cs52-dartmouth.slack.com/apps/A0F7XDUAZ-incoming-webhooks?page=1), go to Add Configuration and in the drop down menu select Privately to yourself.
 ![](/img/webhooks.png)
 
-Click on Add Incoming WebHooks Integration, copy the Webhook URL and paste it into `env.json`.
+Click on Add Incoming WebHooks Integration, copy the Webhook URL and **replace** the current URL in `env.json`.
 
 ### Deploy to AWS with Claudia
 ```
@@ -85,17 +96,17 @@ claudia create --region us-east-2 --handler index.handler --timeout 10 --set-env
 
 You should now see `claudia.json` in your directory. It should look like this:
 
+The "role" and "name" shouldn't match the below but they should be there.
+
 ```
 {
   "lambda": {
-    "role": "scheduled-slack-messages-executor",
-    "name": "scheduled-slack-messages",
+    "role": "workshop-ws-5-8-aws-YOUR-NAME-executor",
+    "name": "workshop-ws-5-8-aws-YOUR-NAME",
     "region": "us-east-2"
   }
 }
 ```
-
-The "role" and "name" shouldn't match the above but they should be there.
 
 Run:
 
@@ -112,7 +123,9 @@ Running the above command will output the `arn` of the task. The output will loo
 ```
 
 Now, run this function with the RuleArn string in place of INSERT-YOUR-ARN and your project
-directory name in place of workshop-ws-5-8-aws-YOUR-NAME:
+directory name in place of workshop-ws-5-8-aws-YOUR-NAME.
+
+:heavy_exclamation_mark: You run this function in your terminal, but we recommend editing this command in Atom or your favorite text editor, so you don't mess up the syntax!
 
 ```
 aws lambda add-permission \
@@ -130,16 +143,26 @@ Run `claudia test-lambda` and you should receive an update.
 
 Now, let's test it! Run `claudia test-lambda`. You should see a slack message in your personal channel!
 
+
+It should look like this!
+
+![](/img/webhook.jpeg).
+
 :tada: You're all done! :tada:
 
 ### Close your AWS Account
-Since we do not want you to get billed, close your account! Go to My Account and at the bottom of the page click Close Account.
+
+:heavy_exclamation_mark: There is no reason you should get billed, but better safe than sorry. Since we do not want you to get billed, close your account! Go to My Account and at the bottom of the page click **Close Account**. :moneybag:
 
 ## Summary / What you Learned
 * [x] Create an AWS Account
 * [x] Set up Claudia
+* [x] Deploy a lambda function to the cloud
+* [x] How to integrate APIs (in this case hackernews) with AWS
+* [x] How to configure `awscli`
+* [x] How to be an AWS god.
 
 ## Resources
-* https://medium.freecodecamp.org/scheduling-slack-messages-using-aws-lambda-e56a8eb22818
-* https://claudiajs.com/tutorials/installing.html
-* https://aws.amazon.com/
+* [Medium Article with a similar workshop](https://medium.freecodecamp.org/scheduling-slack-messages-using-aws-lambda-e56a8eb22818)
+* [Claudia documentation](https://medium.freecodecamp.org/scheduling-slack-messages-using-aws-lambda-e56a8eb22818)
+* [AWS Homepage](https://aws.amazon.com/)
