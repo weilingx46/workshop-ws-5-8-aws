@@ -149,9 +149,9 @@ aws lambda add-permission \
 
 `ruleArn` is the output from the `aws events...` command. `function-name` can also be found by going to the AWS Console -> Services -> Lambda -> Functions.
 
-Now, let's test it! Run `claudia test-lambda`. You should see a Slack message in your personal channel!
+Now, let's test it! Run `claudia test-lambda`. You should see a Slack message in your personal channel.
 
-It should look like this!
+It should look like this:
 
 ![](/img/webhook.jpeg).
 
