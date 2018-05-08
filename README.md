@@ -167,7 +167,8 @@ It should look like this!
 ## Extra Credit
 The world is your oyster!
 
-* [x] Use a different news API
+* [x] Write a custom Cron expression to change the frequency of the Lambda call. [Documentation here.](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html). It is a super long read, but useful explanation of Serverless, Claudia, and Lambda.
+* [x] Use a different news API. This would involve editing the Javascript functions we wrote, take a look!
 
 ## Resources
 * [Medium Article with a similar workshop](https://medium.freecodecamp.org/scheduling-slack-messages-using-aws-lambda-e56a8eb22818)
