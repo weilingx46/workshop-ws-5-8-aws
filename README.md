@@ -8,9 +8,9 @@ Authors: Katherine Bernardez, Robert Crawford, Alexander Danilowicz, Lindsey Hod
 
 ## Overview
 We are making a SlackBot that sends you the five latest stories from [Hacker News](https://news.ycombinator.com/). Here is an abstract diagram of what we are doing.
-![](img/overviewImage.png
+![](img/overviewImage.png)
 
-*This image is from this [Medium article] (https://medium.freecodecamp.org/scheduling-slack-messages-using-aws-lambda-e56a8eb22818), which we based our workshop off of because it's so awesome!*
+*This image is from this [Medium article](https://medium.freecodecamp.org/scheduling-slack-messages-using-aws-lambda-e56a8eb22818), which we based our workshop off of because it's so awesome!*
 
 * [ ] Create an AWS Account
 * [ ] Set up Claudia
@@ -173,7 +173,7 @@ It should look like this!
 ## Extra Credit
 The world is your oyster!
 
-* [x] Use a different news API 
+* [x] Use a different news API
 
 ## Resources
 * [Medium Article with a similar workshop](https://medium.freecodecamp.org/scheduling-slack-messages-using-aws-lambda-e56a8eb22818)
