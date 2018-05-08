@@ -22,12 +22,14 @@ We will be making a Slack app that sends the top five stories from [Hacker News]
 As usual, fork this repo!
 
 Change the name of the directory to `workshop-ws-5-8-aws-YOUR-NAME`.
+
 ![](img/repoNameChange.png)
 
 Also change the name in `package-lock.json` and `package.json` to match your project directory name.
+
 ![](img/packageNameChange.png)
 
-:thought_balloon: You need to do this because when Claudia uploads the Lambda function to AWS, it uses the directory name as the function name and if everyone has the same directory name then there will be conflicting function names and no one will be able to deploy.
+:thought_balloon: You need to do this because when Claudia uploads a Lambda function to AWS, it uses the directory name as the function name and if everyone has the same directory name then there will be conflicting function names and no one will be able to deploy.
 
 ### Sign up for a free AWS account
 Click [here](https://aws.amazon.com/) and then on Create A Free Account. Enter your information. We chose Personal Account, but it should not matter. You will have to enter your credit card information because after the first 12 months AWS starts to bill you (do not worry we will cancel our account at the end of class).
@@ -39,11 +41,13 @@ Click [here](https://aws.amazon.com/) and then on Create A Free Account. Enter y
 
 ### Configure AWS-CLI with your proper credentials
 On the AWS website in the top right click on your account name and then on My Security Credentials.
+
 ![](/img/securityCredentials.png)
 
 :thought_balloon: Normally you would want to get started with IAM users for security reasons, but since this is a quick workshop and we will be canceling our AWS account just click on Continue to Security Credentials.
 
 Expand the Access keys tab and click on Create New Access Key. Hold on to the **access key** and **secret key**.
+
 ![](/img/securityKeys.png)
 
 Run `aws configure`.
@@ -91,6 +95,7 @@ To make sure that we did that correctly, run `echo $AWS_PROFILE` and it should r
 We have already provided you with the code, so no need to copy and paste :smile:
 
 Now, to set up our Slack personal channel! Click [here](https://cs52-dartmouth.slack.com/apps/A0F7XDUAZ-incoming-webhooks?page=1), go to Add Configuration and in the drop down menu select Privately to yourself.
+
 ![](/img/webhooks.png)
 
 Click on Add Incoming WebHooks Integration, copy the Webhook URL and **replace** the current URL in `env.json`.
@@ -153,7 +158,6 @@ It should look like this!
 :tada: You are all done! :tada:
 
 ### Close your AWS Account
-
 :heavy_exclamation_mark: There is no reason you should get billed, but better safe than sorry. Since we do not want you to get billed, close your account! Go to My Account and at the bottom of the page click **Close Account**. :moneybag:
 
 ## Summary / What you Learned
@@ -167,7 +171,7 @@ It should look like this!
 ## Extra Credit
 The world is your oyster!
 
-* [ ] Write a custom Cron expression to change the frequency of the Lambda call. [Documentation here](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html). It is a super long read, but useful explanation of Serverless, Claudia, and Lambda.
+* [ ] Write a custom Cron expression to change the frequency of the Lambda call. [Documentation here](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html). It is a super long read, but useful explanations of Serverless, Claudia and Lambda.
 * [ ] Use a different news API. This would involve editing the Javascript functions we wrote, take a look!
 
 ## Resources
